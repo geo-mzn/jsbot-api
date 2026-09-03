@@ -9,5 +9,5 @@ jsbot.config = {
   saveMemories: true
 };
 
-jsbot.ai = function(input,expected,response){if(input.contains(expected)){return `${jsbot.config.name}: ${response}`;}if(typeof jsbot.config.unknownMsg==="string"){return jsbot.config.unknownMsg;}else if(Array.isArray(jsbot.config.unknownMsg)){return jsbot.config.unknownMsg[Math.floor(Math.random() * jsbot.config.unknownMsg.length)];};}
+jsbot.ai = function(input,expected,response){if(input.contains(expected)){return `${jsbot.config.name}: ${response}`;}if(typeof jsbot.config.unknownMsg==="string"){return `${jsbot.config.name}: ${jsbot.config.unknownMsg}`;}else if(Array.isArray(jsbot.config.unknownMsg)){return `${jsbot.config.name}: ${jsbot.config.unknownMsg[Math.floor(Math.random() * jsbot.config.unknownMsg.length)]}`;};}
 jsbot.cmd = function(input,cmdName,cmdCode){if(input===`/${cmdName}`){cmdCode();}}
